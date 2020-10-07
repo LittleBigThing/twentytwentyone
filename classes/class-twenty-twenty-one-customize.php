@@ -161,7 +161,7 @@ if ( ! function_exists( 'twenty_twenty_one_customize_partial_blogdescription' ) 
 }
 
 /**
- * Render the site tagline for the selective refresh partial.
+ * Active callback to display front page title setting
  */
 function twenty_twenty_one_active_callback_static_front_page() {
 	return ( is_front_page() && ( 'page' === get_option( 'show_on_front' ) ) );
