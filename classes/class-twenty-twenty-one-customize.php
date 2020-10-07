@@ -115,7 +115,7 @@ if ( ! class_exists( 'Twenty_Twenty_One_Customize' ) ) {
 					'type'				=> 'checkbox',
 					'section'			=> 'static_front_page',
 					'label'				=> __( 'Hide Page Title on the Front Page', 'twentytwentyone' ),
-					'active_callback'	=> 'is_front_page',
+					'active_callback'	=> 'twenty_twenty_one_active_callback_static_front_page',
 				)
 			);
 
@@ -158,4 +158,11 @@ if ( ! function_exists( 'twenty_twenty_one_customize_partial_blogdescription' ) 
 	function twenty_twenty_one_customize_partial_blogdescription() {
 		bloginfo( 'description' );
 	}
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ */
+function twenty_twenty_one_active_callback_static_front_page() {
+	return ( is_front_page() && ( 'page' === get_option( 'show_on_front' ) ) );
 }
