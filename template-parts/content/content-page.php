@@ -13,7 +13,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( ! is_front_page() || ( is_front_page() && ! get_theme_mod( 'hide_page_title_front_page' ) ) ) : ?>
+	<?php if ( ! is_front_page() || ! get_theme_mod( 'hide_page_title_front_page' ) ) : ?>
 		<header class="entry-header alignwide">
 			<?php get_template_part( 'template-parts/header/entry-header' ); ?>
 			<?php twenty_twenty_one_post_thumbnail(); ?>
