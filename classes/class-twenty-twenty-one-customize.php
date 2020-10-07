@@ -97,6 +97,28 @@ if ( ! class_exists( 'Twenty_Twenty_One_Customize' ) ) {
 				)
 			);
 
+			/**
+			 * Front page
+			 */
+			$wp_customize->add_setting(
+				'hide_page_title_front_page',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => false,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			$wp_customize->add_control(
+				'hide_page_title_front_page',
+				array(
+					'type'				=> 'checkbox',
+					'section'			=> 'static_front_page',
+					'label'				=> __( 'Hide Page Title on the Front Page', 'twentytwentyone' ),
+					'active_callback'	=> 'is_front_page',
+				)
+			);
+
 		}
 
 		/**
